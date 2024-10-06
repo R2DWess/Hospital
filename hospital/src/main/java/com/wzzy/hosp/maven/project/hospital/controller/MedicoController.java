@@ -34,11 +34,21 @@ public class MedicoController {
         return repository.findAll(paginacao).map(DadosListagemMedico::new);
     }
 
+    @GetMapping("/listar-ativo")
+    public Page<DadosListagemMedico> listarAtivos(Pageable paginacao){
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
+    }
+
     @PutMapping("/atualizar")
     @Transactional
     public void atualizarMedico(@RequestBody @Valid DadosAtualizacaoMedico dadosCadastroMedico) {
         var medico = repository.getReferenceById(dadosCadastroMedico.id());
         medico.atualizarInformacoes(dadosCadastroMedico);
+    }
 
+    @DeleteMapping("/deletar/{id}")
+    public void excluir(@PathVariable Long id) {
+        var medico = repository.getReferenceById((id));
+        medico.excluir();
     }
 }
