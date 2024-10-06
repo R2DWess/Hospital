@@ -35,22 +35,22 @@ public class Endereco {
         if (dadosEndereco.logradouro() != null) {
             this.logradouro = dadosEndereco.logradouro();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.bairro() != null) {
             this.bairro = dadosEndereco.bairro();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.cep() != null) {
             this.cep = dadosEndereco.cep();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.numero() != null) {
             this.numero = dadosEndereco.numero();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.complemento() != null) {
             this.complemento = dadosEndereco.complemento();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.cidade() != null) {
             this.cidade = dadosEndereco.cidade();
         }
-        if (dadosEndereco.logradouro() != null) {
+        if (dadosEndereco.uf() != null) {
             this.uf = dadosEndereco.uf();
         }
     }

@@ -1,4 +1,4 @@
-package com.wzzy.hosp.maven.project.hospital.medico;
+package com.wzzy.hosp.maven.project.hospital.funcionarios.medico;
 
 import com.wzzy.hosp.maven.project.hospital.endereco.DadosEndereco;
 import jakarta.validation.Valid;
@@ -24,7 +24,7 @@ public record DadosCadastroMedico(
         String crm,
 
         @NotNull
-        Especialidade especialidade,
+        EspecialidadeMedico especialidadeMedico,
 
         @NotNull
         @Valid

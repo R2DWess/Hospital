@@ -1,6 +1,4 @@
-package com.wzzy.hosp.maven.project.hospital.medico;
-
-import com.wzzy.hosp.maven.project.hospital.medico.Medico;
+package com.wzzy.hosp.maven.project.hospital.funcionarios.medico;
 
 public record DadosListagemMedico(
 
@@ -8,7 +6,7 @@ public record DadosListagemMedico(
         String nome,
         String email,
         String crm,
-        Especialidade especialidade){
+        EspecialidadeMedico especialidadeMedico){
 
     public DadosListagemMedico(Medico medico){
         this(medico.getId(),medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());

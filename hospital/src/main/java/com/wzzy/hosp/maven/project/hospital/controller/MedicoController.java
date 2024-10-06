@@ -1,12 +1,13 @@
 package com.wzzy.hosp.maven.project.hospital.controller;
 
 
-import com.wzzy.hosp.maven.project.hospital.medico.*;
+import com.wzzy.hosp.maven.project.hospital.funcionarios.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class MedicoController {
     }
 
     @GetMapping("/listar-ativo")
-    public Page<DadosListagemMedico> listarAtivos(Pageable paginacao){
+    public Page<DadosListagemMedico> listarAtivos(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
     }
 
@@ -47,6 +48,7 @@ public class MedicoController {
     }
 
     @DeleteMapping("/deletar/{id}")
+    @Transactional
     public void excluir(@PathVariable Long id) {
         var medico = repository.getReferenceById((id));
         medico.excluir();

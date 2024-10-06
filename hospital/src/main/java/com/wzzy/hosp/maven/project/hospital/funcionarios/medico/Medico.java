@@ -1,4 +1,4 @@
-package com.wzzy.hosp.maven.project.hospital.medico;
+package com.wzzy.hosp.maven.project.hospital.funcionarios.medico;
 
 import com.wzzy.hosp.maven.project.hospital.endereco.Endereco;
 import jakarta.persistence.*;
@@ -20,7 +20,7 @@ public class Medico {
     private String crm;
 
     @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
+    private EspecialidadeMedico especialidadeMedico;
 
     @Embedded
     private Endereco endereco;
@@ -33,7 +33,7 @@ public class Medico {
         this.crm = dados.crm();
         this.email = dados.email();
         this.telefone = dados.telefone();
-        this.especialidade = dados.especialidade();
+        this.especialidadeMedico = dados.especialidadeMedico();
         this.endereco = new Endereco(dados.endereco());
     }
 
@@ -49,27 +49,71 @@ public class Medico {
         }
     }
 
+    public void excluir() {
+        this.ativo = false;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getCrm() {
         return crm;
     }
 
-    public Especialidade getEspecialidade() {
-        return especialidade;
+    public void setCrm(String crm) {
+        this.crm = crm;
     }
 
-    public void excluir() {
-        this.ativo = false;
+    public EspecialidadeMedico getEspecialidade() {
+        return especialidadeMedico;
+    }
+
+    public void setEspecialidade(EspecialidadeMedico especialidadeMedico) {
+        this.especialidadeMedico = especialidadeMedico;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }
