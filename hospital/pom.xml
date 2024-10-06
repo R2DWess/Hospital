@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wzzy.hosp.maven</groupId>
-	<artifactId>Projeto-hospital</artifactId>
+	<artifactId>hospital</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Projeto-hospital</name>
 	<description>Projeto</description>
