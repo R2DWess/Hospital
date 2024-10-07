@@ -1,6 +1,6 @@
 package com.wzzy.hosp.maven.project.hospital.funcionarios.radiologista;
 
-public enum EspecialidadeRadiologista {
+public enum EspecialidadeTecnicoRadiologista {
 
     RADIOLOGIA_CONVENCIONAL,
     RADIOLOGIA_INTERVENCIONISTA,

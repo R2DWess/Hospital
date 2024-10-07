@@ -1,15 +1,26 @@
 package com.wzzy.hosp.maven.project.hospital.funcionarios.enfermeiro;
 
-import com.wzzy.hosp.maven.project.hospital.endereco.Endereco;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.Funcionario;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@Table(name = "enfermeiro")
+@Entity(name = "Enfermeiro")
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Enfermeiro extends Funcionario {
 
     private String coren;
+    private EspecialidadeEnfermeiro especialidadeEnfermeiro;
 
-    public Enfermeiro(String nome, String cpf, String telefone, String email, Endereco endereco, String coren) {
-        super(nome, cpf, telefone, email, endereco);
+    public Enfermeiro(Long id, String nome, String cpf, String telefone, String email, String coren, EspecialidadeEnfermeiro especialidadeEnfermeiro) {
+        super(id, nome, cpf, telefone, email);
         this.coren = coren;
+        this.especialidadeEnfermeiro = especialidadeEnfermeiro;
     }
 
     public String getCoren() {
@@ -20,9 +31,12 @@ public class Enfermeiro extends Funcionario {
         this.coren = coren;
     }
 
-    @Override
-    public String getRegistroProfissional() {
-        return coren;
+    public EspecialidadeEnfermeiro getEspecialidadeEnfermeiro() {
+        return especialidadeEnfermeiro;
+    }
+
+    public void setEspecialidade(EspecialidadeEnfermeiro especialidadeEnfermeiro) {
+        this.especialidadeEnfermeiro = especialidadeEnfermeiro;
     }
 }
 

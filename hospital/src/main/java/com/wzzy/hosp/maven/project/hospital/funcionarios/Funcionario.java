@@ -1,27 +1,58 @@
 package com.wzzy.hosp.maven.project.hospital.funcionarios;
 
-import com.wzzy.hosp.maven.project.hospital.endereco.Endereco;
-import jakarta.persistence.*;
-import lombok.*;
-
-@MappedSuperclass
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 public abstract class Funcionario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private String cpf;
-    private String telefone;
-    private String email;
+    protected Long id;
+    protected String nome;
+    protected String cpf;
+    protected String telefone;
+    protected String email;
 
-    @Embedded
-    private Endereco endereco;
+    public Funcionario(Long id, String nome, String cpf, String telefone, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+    }
 
-    public abstract String getRegistroProfissional();
+    public String getId() {
+        return nome;
+    }
+
+    public void setId(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
