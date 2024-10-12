@@ -2,7 +2,6 @@ package com.wzzy.hosp.maven.hospital;
 
 import static org.mockito.Mockito.*;
 
-import com.wzzy.hosp.maven.project.hospital.controller.MedicoController;
 import com.wzzy.hosp.maven.project.hospital.endereco.DadosEndereco;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.medico.DadosCadastroMedico;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.medico.EspecialidadeMedico;

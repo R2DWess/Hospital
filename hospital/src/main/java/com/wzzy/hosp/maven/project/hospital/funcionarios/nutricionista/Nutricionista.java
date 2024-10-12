@@ -1,7 +1,11 @@
 package com.wzzy.hosp.maven.project.hospital.funcionarios.nutricionista;
 
 import com.wzzy.hosp.maven.project.hospital.funcionarios.Funcionario;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Table(name = "nutricionista")
+@Entity(name = "Nutricionista")
 public class Nutricionista extends Funcionario {
     private String crn;
     private EspecialidadeNutricionista especialidadeNutricionista;

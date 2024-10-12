@@ -1,5 +1,6 @@
 package com.wzzy.hosp.maven.project.hospital;
 
+import com.wzzy.hosp.maven.project.hospital.endereco.Endereco;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.Funcionario;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.enfermeiro.Enfermeiro;
 import com.wzzy.hosp.maven.project.hospital.funcionarios.enfermeiro.EspecialidadeEnfermeiro;
@@ -16,6 +17,7 @@ import com.wzzy.hosp.maven.project.hospital.funcionarios.radiologista.TecnicoRad
 
 public class FuncionarioFactory {
 
+    // Método responsável por criar um funcionário com base no tipo e especialidade passados
     public static Funcionario criarFuncionario(Long id,
                                                String tipo,
                                                String nome,
@@ -23,6 +25,7 @@ public class FuncionarioFactory {
                                                String telefone,
                                                String email,
                                                String registroProfissional,
+                                               Endereco endereco, // Adicionando o endereço aqui
                                                EspecialidadeMedico especialidadeMedico,
                                                EspecialidadeNutricionista especialidadeNutricionista,
                                                EspecialidadeEnfermeiro especialidadeEnfermeiro,
@@ -31,17 +34,17 @@ public class FuncionarioFactory {
                                                EspecialidadeTecnicoRadiologista especialidadeTecnicoRadiologista) {
         switch (tipo.toLowerCase()) {
             case "medico":
-                return new Medico(id, nome, cpf, telefone, email, registroProfissional, especialidadeMedico);
-            case "nutricionista":
-                return new Nutricionista(id, nome, cpf, telefone, email, registroProfissional, especialidadeNutricionista);
-            case "enfermeiro":
-                return new Enfermeiro(id, nome, cpf, telefone, email, registroProfissional, especialidadeEnfermeiro);
-            case "farmaceutico":
-                return new Farmaceutico(id, nome, cpf, telefone, email, registroProfissional, especialidadeFarmaceutico);
-            case "fisioterapeuta":
-                return new Fisioterapeuta(id, nome, cpf, telefone, email, registroProfissional, especialidadeFisioterapeuta);
-            case "radiologista":
-                return new TecnicoRadiologista(id, nome, cpf, telefone, email, registroProfissional, especialidadeTecnicoRadiologista);
+                return new Medico(id, nome, cpf, telefone, email, registroProfissional, especialidadeMedico, endereco);
+//            case "nutricionista":
+//                return new Nutricionista(id, nome, cpf, telefone, email, registroProfissional, especialidadeNutricionista, endereco);
+//            case "enfermeiro":
+//                return new Enfermeiro(id, nome, cpf, telefone, email, registroProfissional, especialidadeEnfermeiro, endereco);
+//            case "farmaceutico":
+//                return new Farmaceutico(id, nome, cpf, telefone, email, registroProfissional, especialidadeFarmaceutico, endereco);
+//            case "fisioterapeuta":
+//                return new Fisioterapeuta(id, nome, cpf, telefone, email, registroProfissional, especialidadeFisioterapeuta, endereco);
+//            case "radiologista":
+//                return new TecnicoRadiologista(id, nome, cpf, telefone, email, registroProfissional, especialidadeTecnicoRadiologista, endereco);
             default:
                 throw new IllegalArgumentException("Tipo de funcionário desconhecido: " + tipo);
         }
